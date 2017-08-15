@@ -33,8 +33,9 @@ var map = new ol.Map({
     typeAhead: function(e){
       var el = e.target;
       var val = el.value;
-      console.log(val)
-    }
+      app.queryAutocomplete(val, function(err, data){
+      console.log(data);
+    })
   },
       queryAutocomplete: throttle(function(text, callback){
     $.ajax({
