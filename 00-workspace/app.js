@@ -37,3 +37,4 @@ var map = new ol.Map({
     }
   }
    $('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
+
