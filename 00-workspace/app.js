@@ -29,7 +29,7 @@ var map = new ol.Map({
   var app = {
     mapzenKey: 'mapzen-CpAANqF', 
     activeSearch: 'from',
-
+  },
     typeAhead: function(e){
       var el = e.target;
       var val = el.value;
