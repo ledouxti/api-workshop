@@ -108,7 +108,10 @@ var app = {
 
   clearList: function(e){
     app.options = [];
+    app.trip = {};
     app.renderResultsList();
+    app.renderDirectionsList();
+    app.routeLayer.setSource(null);
   },
 
   clearSearch: function(e){
@@ -131,7 +134,7 @@ var app = {
           type:'break'
         }
       ],
-      costing:'pedestrian',
+      costing:'auto',
       directions_options:{
         units:'miles'
       }
@@ -139,6 +142,7 @@ var app = {
     $.ajax({
       url: 'https://valhalla.mapzen.com/route?json=' + JSON.stringify(json) + '&api_key=' + app.mapzenKey,
       success: function(data, status, req){
+        app.trip = data.trip;
         var coords = polyline.decode(data.trip.legs[0].shape);
         callback(null, coords);
       },
@@ -168,6 +172,8 @@ var app = {
         app.routeLayer.getSource().getExtent(),
         map.getSize()
       )      
+
+      app.renderDirectionsList();
     }
   },
 
@@ -198,6 +204,7 @@ var app = {
   }
 
 }
+
 // SETUP EVENT BINDING HERE
 
 $('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
