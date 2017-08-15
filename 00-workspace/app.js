@@ -42,7 +42,7 @@ var map = new ol.Map({
       url: 'https://search.mapzen.com/v1/autocomplete?text=' + text + '&api_key=' + app.mapzenKey, 
       success: function(data, status, req){
         callback(null, data);
-      },
+      )},
       error: function(req, status, err){
         callback(err)
       }
