@@ -27,6 +27,12 @@ var map = new ol.Map({
 // SETUP APPLICATION LOGIC HERE
 
   var app = {
-    mapzenKey: 'mapzen-CpAANqF', // feel free to add your key if you want
-    activeSearch: 'from'
+    mapzenKey: 'mapzen-CpAANqF', 
+    activeSearch: 'from',
+
+    typeAhead: function(e){
+      var el = e.target;
+      var val = el.value;
+      console.log(val);
+    }
   }
