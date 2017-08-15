@@ -34,4 +34,4 @@ var map = new ol.Map({
       var val = el.value;
       console.log(val);
     }
-  }
+  };
