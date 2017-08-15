@@ -131,7 +131,7 @@ var app = {
           type:'break'
         }
       ],
-      costing:'auto',
+      costing:'pedestrian',
       directions_options:{
         units:'miles'
       }
