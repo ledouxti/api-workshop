@@ -35,6 +35,6 @@ var map = new ol.Map({
       var val = el.value;
       console.log(val);
     }
-  }
+  },
    $('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
 
