@@ -27,29 +27,6 @@ var map = new ol.Map({
 // SETUP APPLICATION LOGIC HERE
 
   var app = {
-    mapzenKey: 'mapzen-CpAANqF', 
-    activeSearch: 'from',
-  },
-    typeAhead: function(e){
-      var el = e.target;
-      var val = el.value;
-      app.queryAutocomplete(val, function(err, data){
-      console.log(data);
-    })
-    }
-  },
-      queryAutocomplete: throttle(function(text, callback){
-    $.ajax({
-      url: 'https://search.mapzen.com/v1/autocomplete?text=' + text + '&api_key=' + app.mapzenKey, 
-      success: function(data, status, req){
-        callback(null, data);
-      )},
-      error: function(req, status, err){
-        callback(err)
-      }
-    })
-  }, 150)
-}
-      
-   $('#search-from-input').on('keyup', {input:'from'}, app.typeAhead);
-
+    mapzenKey: 'mapzen-CpAANqF', // feel free to add your key if you want
+    activeSearch: 'from'
+  }
