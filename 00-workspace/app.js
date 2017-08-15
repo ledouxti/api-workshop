@@ -169,7 +169,7 @@ var app = {
         map.getSize()
       )      
     }
-  }
+  },
 
   renderDirectionsList: function(err){
     var sidebar = $('#sidebar');
